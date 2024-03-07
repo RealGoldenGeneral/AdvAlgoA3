@@ -9,7 +9,7 @@
  */
 #include <iostream>
 
-enum class Color { RED, BLACK };
+enum class Color { RED, BLACK, BLUE };
 
 template <typename Key>
 struct Node {
