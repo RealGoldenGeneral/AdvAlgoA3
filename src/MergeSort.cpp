@@ -7,11 +7,16 @@
 #include "../include/MergeSort.h"
 
 template <typename T>
-void MergeSort<T>::sort(std::vector<T> &arr) {
-
+void MergeSort<T>::merge(std::vector<T> &arr, const std::vector<T> &left, const std::vector<T> &right) {
 }
 
 template <typename T>
-void MergeSort<T>::merge(std::vector<T> &arr, const std::vector<T> &left, const std::vector<T> &right) {
-
+void MergeSort<T>::sort(std::vector<T> &arr) {
+    int center = (0 + (arr.size() - 1)) / 2;
+    if (0 < arr.size() - 1) {
+        auto itCenter = arr.begin() + center;
+        sort(std::vector<T>(arr.begin(), itCenter));
+        sort(std::vector<T>(itCenter + 1, arr.end()));
+        merge(arr, std::vector<T>(arr.begin(), itCenter), std::vector<T>(itCenter + 1, arr.end()));
+    }
 }
