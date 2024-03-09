@@ -10,6 +10,7 @@ add_executable(8042_Assignment_3
         include/HashTable.h
         include/RadixSort.h
         include/MergeSort.h
+        include/Stack.h
         src/LibraryRestructuring.cpp
         tests/TestEnvironment.h
         tests/LibraryRestructuringTests.h
