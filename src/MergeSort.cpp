@@ -12,7 +12,7 @@ void MergeSort<T>::merge(std::vector<T> &arr, const std::vector<T> &left, const 
     int rightPos = 0;
     int arrayPos = 0;
     while (leftPos < left.size() && rightPos < right.size()) {
-        if (compare) {
+        if (compare(left[leftPos], right[rightPos])) {
             arr[arrayPos++] = left[leftPos++];
         } else {
             arr[arrayPos++] = right[rightPos++];
