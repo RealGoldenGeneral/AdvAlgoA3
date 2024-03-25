@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include "tests/MergeSortTests.h"
 #include "tests/RadixSortTests.h"
-//#include "tests/LibraryRestructuringTests.h"
+#include "tests/LibraryRestructuringTests.h"
 #include "include/LExceptions.h"
 /*
  * This is the driver file which directs the project on testing different modules.
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
             std::cout << ">> RadixSort:\t\t\t\t\t\t";
             radixSortTests();
             std::cout << ">> Library Restructuring System: \t";
-//            libraryRestructuringTests();
+            libraryRestructuringTests();
             break;
         default:
             throw std::invalid_argument("Invalid module choice");
