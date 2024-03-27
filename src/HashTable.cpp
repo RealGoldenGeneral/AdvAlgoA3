@@ -102,7 +102,7 @@ ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
 
     unsigned int index = hash;
     // Search for key in hash table
-    for (unsigned int i = 0; i < hopRange; ++i) {
+    for (unsigned int i = 0; i <= hopRange; ++i) {
         if (hashTable[index].occupied && hashTable[index].key == key) {
             // If key is found, return its value
             return hashTable[index].value;

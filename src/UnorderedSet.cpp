@@ -273,9 +273,7 @@ UnorderedSet<Key>::UnorderedSet() {
 }
 
 template <typename Key>
-UnorderedSet<Key>::~UnorderedSet() {
-    clear();
-}
+UnorderedSet<Key>::~UnorderedSet() = default;
 
 template <typename Key>
 typename UnorderedSet<Key>::Iterator UnorderedSet<Key>::begin() const {

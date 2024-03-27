@@ -1,5 +1,5 @@
 #include <vector>
-#include "../../../../Downloads/A3/include/Stack.h"
+#include "../include/Stack.h"
 
 // Creates a stack with an empty vector buffer.
 template <typename T>
