@@ -6,6 +6,7 @@
 #include <functional>
 #include "../include/MergeSort.h"
 
+// Merges two left and right parts of the array into one array.
 template <typename T>
 void MergeSort<T>::merge(std::vector<T> &arr, const std::vector<T> &left, const std::vector<T> &right) {
     int leftPos = 0;
@@ -28,6 +29,7 @@ void MergeSort<T>::merge(std::vector<T> &arr, const std::vector<T> &left, const 
     }
 }
 
+// Sorts the array.
 template <typename T>
 void MergeSort<T>::sort(std::vector<T> &arr) {
     int center = (0 + (arr.size() - 1)) / 2;

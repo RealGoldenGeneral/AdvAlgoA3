@@ -11,6 +11,7 @@
 #include "../include/Stack.h"
 #include "../include/LibraryRestructuring.h"
 
+// Performs a depth first search on the graph.
 void LibraryRestructuring::dfs(const std::string &current, std::vector<std::string> &cluster,
                                HashTable<std::string, bool> &visited) {
     visited[current] = true;
@@ -23,6 +24,7 @@ void LibraryRestructuring::dfs(const std::string &current, std::vector<std::stri
     }
 }
 
+// Calculates the average borrowing time of a cluster.
 double LibraryRestructuring::getAverageBorrowingTime(const std::vector<std::string> &cluster) {
     double totalBorrowingTime = 0.0;
     for (const std::string& ISBN : cluster) {
@@ -32,6 +34,7 @@ double LibraryRestructuring::getAverageBorrowingTime(const std::vector<std::stri
     return totalBorrowingTime / cluster.size();
 }
 
+// Constructs a library restructure. Fills all blocks, book borrowing time, and the graph.
 LibraryRestructuring::LibraryRestructuring(const UnorderedSet<BorrowRecord> &records,
                                            const UnorderedSet<Book> &bookCollection) {
     HashTable<std::string, Book> books = HashTable<std::string, Book>(bookCollection.size());
@@ -61,6 +64,8 @@ LibraryRestructuring::LibraryRestructuring(const UnorderedSet<BorrowRecord> &rec
     }
 }
 
+// Clusters the graph and sorts the clusters by average duration of borrowed time and either title, author,
+// or year published,
 std::vector<std::vector<std::string>> LibraryRestructuring::clusterAndSort(const std::string &sortBy) {
     HashTable<std::string, bool> visited = HashTable<std::string, bool>(graph.size());
     std::vector<std::vector<std::string>> clusters;
